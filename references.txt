@@ -1,8 +1,4 @@
 References:
 
 
-AOS - Animate on scroll library. (n.d.). https://michalsnik.github.io/aos/
-
-Embeds | Spotify for Developers. (n.d.). https://developer.spotify.com/documentation/embeds
-
-Tsparticles. (n.d.). GitHub - tsparticles/tsparticles: tsParticles - Easily create highly customizable JavaScript particles effects, confetti explosions and fireworks animations and use them as animated backgrounds for your website. Ready to use components available for React.js, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Inferno, Solid, Riot and Web Components. GitHub. https://github.com/tsparticles/tsparticles
+AOS - Animate on scroll library. (n.d.). https://michalsnik.github.io/aos/ Embeds | Spotify for Developers. (n.d.). https://developer.spotify.com/documentation/embeds Tsparticles. (n.d.). GitHub - tsparticles/tsparticles: tsParticles - Easily create highly customizable JavaScript particles effects, confetti explosions and fireworks animations and use them as animated backgrounds for your website. Ready to use components available for React.js, Vue.js (2.x and 3.x), Angular, Svelte, jQuery, Preact, Inferno, Solid, Riot and Web Components. GitHub. https://github.com/tsparticles/tsparticles Universal UI/Menu Soundpack by Cyrex Studios. (n.d.). itch.io. https://cyrex-studios.itch.io/universal-ui-soundpack
