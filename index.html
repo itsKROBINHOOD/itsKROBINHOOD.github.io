@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+      tailwind.config = {
+        darkMode: 'class'
+      };
+  </script>
+<!-- AOS CSS -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100 font-sans">
+
+  <audio id="sound-dark" src="Audio/Retro9.wav" preload="auto"></audio>
+  <audio id="sound-light" src="Audio/Retro8.wav" preload="auto"></audio>
+
+  <audio id="lightbox-open-sound" src="Audio/Modern4.wav" preload="auto"></audio>
+  <audio id="lightbox-close-sound" src="Audio/Modern5.wav" preload="auto"></audio>
+
+  <audio id="hyperlink" src="Audio/Retro10.wav" preload="auto"></audio>
+
+  <!-- Header -->
+  <header class="light:bg-white dark:bg-gray-800 shadow-md">
+    <div class="max-w-7xl mx-auto p-6 flex flex-col md:flex-row items-center justify-between">
+       <button id="dark-mode-toggle" class="bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-100 px-4 py-2 rounded hover:bg-gray-300 dark:hover:bg-gray-600">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+        </button>
+      <div class="flex items-center gap-4 mt-4 md:mt-0">
+        <nav class="space-x-4">
+          <a href="#gallery" class="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white">My Works</a>
+          <a href="#about" class="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white">About</a>
+          <a href="#contact" class="text-gray-600 hover:text-black dark:text-gray-300 dark:hover:text-white">Contact</a>
+        </nav>
+       
+      </div>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="text-center py-16 px-4 bg-gradient-to-br from-gray-400 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+    <h2 class="text-4xl font-semibold mb-4">Robin | itsKROBINHOOD </h2>
+    <h3 class="text-3xl font-semibold mb-4">2D Digital artist & Game Designer </h3>
+    <p class="max-w-xl mx-auto text-lg">Explore my latest creations, projects, and artistic expressions.</p>
+  </section>
+
+  <!-- Gallery Filters -->
+  <section id="gallery" class="py-16 px-4">
+    <h3 class="text-3xl font-bold text-center mb-8">My Works</h3>
+
+    <!-- Category Filter Buttons -->
+    <div class="text-center mb-8 space-x-4">
+      <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600" data-category="all">All</button>
+      <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600" data-category="sketch">Sketch</button>
+      <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600" data-category="background">Background</button>
+      <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600" data-category="concept">Concept</button>
+      <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600" data-category="illustration">Illustration</button>
+      <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600" data-category="meme">Meme</button>
+      <button class="filter-btn bg-gray-300 dark:bg-gray-700 px-4 py-2 rounded hover:bg-gray-400 dark:hover:bg-gray-600" data-category="fanart">Fanart</button>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="gallery-grid">
+      <!-- Gallery Item -->
+      
+      <div class="gallery-item" data-categories="background,illustration">
+        <img src="Images/Art/Background_me3_but_better but even better.png" alt="Artwork" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Coastal Lies" – Splash page for a fictional game</p>
+      </div>
+
+
+      <div class="gallery-item" data-categories="sketch">
+        <img src="Images/Art/Mafia Duo   Cat.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Mafia Trio" – Art for a friend</p>
+      </div>
+
+      <div class="gallery-item" data-categories="sketch,concept">
+        <img src="Images/Art/eden logo concepts.png" alt="Artwork 3" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Eden Logo Concepts" – Icon logo concepts for a twine game</p>
+      </div>
+
+      <div class="gallery-item" data-categories="background,illustration">
+        <img src="Images/Art/Group Artfight final final with saxn.png" alt="Artwork 3" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"ArtFight 2024" – Mutliple character attack for art fight in 2024</p>
+      </div>
+
+       <div class="gallery-item" data-categories="background,illustration">
+        <img src="Images/Art/Characteer Ideas 1.png" alt="Artwork 3" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Eddy One" – Finalised concept art for a cyberpunk head</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/Night Sky bg.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Robin Sleeping" – Starting soon background scene for my streams</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,fanart">
+        <img src="Images/Art/Shioh Fanart final.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Shioh Balls Time" – Fanart for the vtuber  Shioh</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/Leo post.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Leo" – Art for a friend</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/Robin Being Cool at night.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Robin" – Art of my OC</p>
+      </div>
+
+        <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/Tank Character Art.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Tank" – From the 'RoundTable' board game</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/Maestro Character Art.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Maestro" – From the 'RoundTable' board game</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/Gambler Character Art.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Gambler" – From the 'RoundTable' board game</p>
+      </div>
+       
+       <div class="gallery-item" data-categories="illustration,background">
+        <img src="Images/Art/Crimson Purgatory splash final version.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Crimson Purgatory" – Splash art for ME1 in first year</p>
+      </div>
+
+       <div class="gallery-item" data-categories="concept">
+        <img src="Images/Art/Sword Concepts ME2 final.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Sword Concept Art" – Made for  ME2 in first year</p>
+      </div>
+
+      <div class="gallery-item" data-categories="concept,sketch">
+        <img src="Images/Art/eye study.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Eye Study" – A study to help me decide on the style of eyes I draw</p>
+      </div>
+
+      <div class="gallery-item" data-categories="meme">
+        <img src="Images/Art/Wanna play deadlock.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Sticker for Deadlock Game"</p>
+      </div>
+
+      <div class="gallery-item" data-categories="">
+        <img src="Images/Art/Sure ok..png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Sticker for Deadlock game" </p>
+      </div>
+
+        <div class="gallery-item" data-categories="meme,,fanart,sketch">
+        <img src="Images/Art/Hehe Whatley.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Ibuprofen Meme" – Made for the streamer NoArmWhatley</p>
+      </div>
+
+      <div class="gallery-item" data-categories="meme,fanart">
+        <img src="Images/Art/Long Bunnipede.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Long Bunnipede" – Fanart for Shioh</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,fanart">
+        <img src="Images/Art/Ezreal Fanart.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Ezreal Fanart" –  Heartsteel Ezreal from League of Legends</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,fanart">
+        <img src="Images/Art/Ekko Arcane semi final.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Ekko" – From Arcane League of Legends</p>
+      </div>
+
+      <div class="gallery-item" data-categories="meme">
+        <img src="Images/Art/Kuromi E10 F10.gif" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Kuromi ♥" – Sticker for a friend</p>
+      </div>
+
+      <div class="gallery-item" data-categories="meme">
+        <img src="Images/Art/Kuromi G8.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Kuromi Fire" – Sticker for a friend</p>
+      </div>
+
+      <div class="gallery-item" data-categories="meme">
+        <img src="Images/Art/Kuromi O6.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Kuromi WTF" – Sticker for a friend</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/modern knightware finished.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Modern Knightware" – My take on knightware in modern clothing</p>
+      </div>
+
+      <div class="gallery-item" data-categories="sketch,concept">
+        <img src="Images/Art/Knight with stand x1.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Knight with a stand" – If a knight was given a tank stand from JJBA</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/Alian.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Alian" – OC for a friend</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,fanart,meme">
+        <img src="Images/Art/Boom.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"REPO falling from the sky" – Chest pains meme</p>
+      </div>
+
+      <div class="gallery-item" data-categories="sketch,illustration">
+        <img src="Images/Art/webtoon panel.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Dang Heng x Caelus" – Trying to make a webtoon panel</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/ParcelPanic Logo.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Parcel Panic Logo" – Concept Game Logo</p>
+      </div>
+
+      <div class="gallery-item" data-categories="sketch,illustration">
+        <img src="Images/Art/Castorice Illustration lineart.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Castorice Illustration" – WIP</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/CyberLady improved 3.0 censored.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"CyberLady" – ver 1</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration">
+        <img src="Images/Art/CyberLady improved 2.0 x  censored.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"CyberLady" – ver 2</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,background">
+        <img src="Images/Art/TitleScene.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Title Screen" – RetroDodge game for ME3</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,background">
+        <img src="Images/Art/GameOverScreen.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Game Over" – RetroDodge game for ME3</p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,background">
+        <img src="Images/Art/Duo artbig.png" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Monkey Zodiac OC" </p>
+      </div>
+
+      <div class="gallery-item" data-categories="illustration,background">
+        <img src="Images/Art/Animation2.gif" alt="Artwork 2" class="lightbox-trigger w-full h-auto rounded shadow-md cursor-pointer">
+        <p class="mt-2 text-center text-sm text-gray-700 dark:text-gray-300">"Animated version of Monkey Zodiac"</p>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- About -->
+<section id="about" class="bg-gray-200 dark:bg-gray-800 py-24 px-6">
+  <div class="max-w-6xl mx-auto text-center space-y-16" data-aos="fade-up" data-aos-duration="1000">
+    
+    <div class="space-y-6">
+      <h3 class="text-5xl font-extrabold text-gray-800 dark:text-white">About Me</h3>
+      <p class="text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Hi! I'm Khelan Reddy but I go by the alias <span class="text-purple-500 font-semibold">Robin</span>, a 2D digital artist and game designer. I love creating vibrant visuals, game concepts, and digital experiences.
+      </p>
+      <p class="text-xl leading-relaxed text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Ever since I was young I always loved being creative drawing and listening/creating music was one of my favourite passtimes when I didn't feel like playing video games. I get satisfaction from creating media that people are able to enjoy but art has become something that becomes fulfilling to me, where I can easily express myself and challenge myself to become a better artist.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-16 text-left px-4">
+      
+      <!-- What I Do -->
+      <div data-aos="fade-right" data-aos-delay="500" class="space-y-6">
+        <h4 class="text-3xl font-bold text-gray-800 dark:text-white">💼 What I Do</h4>
+        <ul class="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+          <li>Create 2D illustrations, characters & game assets</li>
+          <li>Design UI & concept art for games</li>
+          <li>Explore and build mini-games</li>
+          <li>Dabble in web design & development</li>
+        </ul>
+      </div>
+
+      <!-- Education & Interests -->
+      <div data-aos="fade-left" data-aos-delay="600" class="space-y-6">
+        <h4 class="text-3xl font-bold text-gray-800 dark:text-white">🎓 Education</h4>
+        <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+          Bachelor of Arts in Game Design & Production<br />
+          <span class="text-base text-gray-500 dark:text-gray-400">SAE Institute Johannesburg</span>
+        </p>
+
+        <h4 class="text-3xl font-bold mt-8 text-gray-800 dark:text-white">🎮 Interests</h4>
+        <ul class="list-disc list-inside space-y-3 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+          <li>Playing video games</li>
+          <li>Reading & drawing</li>
+          <li>Streaming</li>
+          <li>Music – 
+            <a id="music-button" href="music.html" target="_blank" class="text-blue-500 hover:underline">Click Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Final Statement -->
+    <div class="max-w-4xl mx-auto" data-aos="zoom-in-up" data-aos-delay="300">
+      <p class="text-xl text-gray-600 dark:text-gray-300 leading-loose">
+        My goal is to work in the gaming industry as an artist, whether on concept art or illustration. I want to be the reason, like artists have done for me, that someone picks up a pen and starts creating!
+      </p>
+    </div>
+    
+  </div>
+</section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="py-16 px-4 bg-gradient-to-br from-gray-400 to-gray-200 dark:from-gray-800 dark:to-gray-900" >
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6" data-aos="fade-up" data-aos-duration="1000">Contact</h3>
+      <p class="mb-4" data-aos="fade-left" data-aos-delay="600">Want to collaborate, commission, or just say hello?</p>
+      <a id="contact-button" href="links.html" target="_blank"
+   class="inline-block bg-black text-white px-6 py-3 rounded hover:bg-gray-800 transition dark:bg-white dark:text-black dark:hover:bg-gray-300" data-aos="fade-right" data-aos-delay="500">
+  Click this button to contact me through my socials!
+</a>
+<br> <br>
+<p class="mb-4" data-aos="fade-up" data-aos-duration="1000">I don' really check my email...</p>
+
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-6 text-gray-500 text-sm bg-white dark:bg-gray-800 dark:text-gray-400">
+    <div class="flex justify-center space-x-4 mb-2">
+      <a href="https://www.instagram.com/itskrobinhood/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" class="w-6 h-6 inline-block" />
+      </a>
+      <a href="https://x.com/its_KROBINHOOD" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" class="w-6 h-6 inline-block" />
+      </a>
+      <a href="https://www.artstation.com/krobinhood" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/artstation.svg" alt="ArtStation" class="w-6 h-6 inline-block" />
+      </a>
+      <a href="https://bsky.app/profile/itskrobinhood.bsky.social" target="_blank">
+        <img src="Images/icons/bluesky-icon.svg" alt="Bluesky" class="w-6 h-6 inline-block" />
+      </a>
+    </div>
+    <p>© 2025 itsKROBINHOOD. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox hidden fixed inset-0 bg-black bg-opacity-80 dark:bg-opacity-90 flex items-center justify-center z-50">
+    <img id="lightbox-img" src="" alt="Full artwork" class="max-w-full max-h-full rounded shadow-lg" />
+  </div>
+
+ 
+
+  <script src="script.js"></script>
+</body>
+</html>

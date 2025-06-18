@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Socials</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+
+  <!-- Make it so the user cannot scroll on this page-->
+  <style>
+        html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }  
+  </style>
+
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white font-sans flex items-center justify-center min-h-screen">
+
+  <audio id="hyperlink" src="Audio/Retro10.wav" preload="auto"></audio>
+
+
+  <!-- tsParticles Container -->
+  <div id="tsparticles"></div>
+
+  <!-- Your Content -->
+  <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg z-10 text-center space-y-6">
+    <h1 class="text-6xl font-bold">Socials</h1>
+    <p class="text-2xl text-gray-600 dark:text-gray-300">Please check out my art on other platforms:</p>
+    <div class="space-y-4">
+      <a id="contact-button" href="https://www.instagram.com/itskrobinhood/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" class="w-20 h-20 m-3 inline-block" />
+      </a>
+      <a id="contact-button" href="https://x.com/its_KROBINHOOD" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/twitter.svg" alt="Twitter" class="w-20 h-20 m-3 inline-block" />
+      </a>
+      <a id="contact-button" href="https://www.artstation.com/krobinhood" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/artstation.svg" alt="ArtStation" class="w-20 h-20 m-3 inline-block" />
+      </a>
+      <a id="contact-button" href="https://bsky.app/profile/itskrobinhood.bsky.social" target="_blank">
+        <img src="Images/icons/bluesky-icon.svg" alt="Bluesky" class="w-20 h-20 m-3 inline-block" />
+      </a>
+    </div>
+  </div>
+
+  <!-- tsParticles Slim -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.0.6/tsparticles.slim.bundle.min.js"></script>
+  <script>
+    const options = {
+      background: {
+        color: "#48436d" // Tailwind's gray-900 to match dark mode
+      },
+      interactivity: {
+        events: {
+          onClick: { enable: true, mode: "push" },
+          onHover: { enable: true, mode: "repulse" }
+        },
+        modes: {
+          push: { quantity: 6 },
+          repulse: { distance: 100 }
+        }
+      },
+      particles: {
+        links: { enable: true, opacity: 0.3, distance: 200 },
+        move: { enable: true, speed: { min: 1, max: 3 } },
+        opacity: { value: { min: 0.3, max: 0.7 } },
+        size: { value: { min: 1, max: 3 } }
+      }
+    };
+
+    tsParticles.load("tsparticles", options);
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
